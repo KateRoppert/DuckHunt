@@ -1,0 +1,228 @@
+html, body { height: 100%; }
+
+.wrapper {
+  position: relative;
+  height: 100%;
+  background-image: url('img/bg_full.png');
+  background-size: contain;
+}
+.start {
+  position: absolute;
+  top: 30%;
+  left: 40%;
+  display: block;
+  width: 200px;
+  height: 100px;
+  line-height: 100px;
+  font-size: 24px;
+  color: darkgreen;
+  background-color: greenyellow;
+  border: 2px solid darkgreen;
+}
+.score {
+  position: absolute;
+  width: 30px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  font-size: 12px;
+  font-family: 'Ranchers', cursive;
+  color: black;
+  font-weight: bold;
+  opacity: 0;
+}
+.score_active {
+  width: 50px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 20px;
+  opacity: 1;
+  transform: translateY(-50px);
+  transition: all 1s linear;
+}
+.gs {
+  background-image: url('img/gs.png');
+  background-repeat: no-repeat;
+  background-position: 9999px 9999px; 
+}
+* {
+  cursor: url('../img/aim.png'), crosshair;
+}
+.dog {
+  z-index: 1;
+  position: absolute;
+  bottom: 90px;
+  left: 0;
+  width: 166px;
+  height: 122px;
+  -ms-transform: translate(0px, 0px);
+      transform: translate(0px, 0px);
+}
+.dog_walk {
+  animation-name: dog-walk;
+  animation-duration: .6s;
+  animation-iteration-count: infinite;
+  animation-timing-function: steps(1, end);
+  animation-delay: 0s;
+  -ms-transform: translate(45vw, 0px);
+      transform: translate(45vw, 0px);
+  transition: transform 6s linear;
+}
+.dog_jump {
+  width: 161px;
+  height: 143px;
+  animation-name: dog-jump;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-timing-function: steps(1, end);
+  animation-delay: 0s;
+  -ms-transform: translate(48vw, -80px);
+      transform: translate(48vw, -80px);
+  transition: transform .5s linear .5s;
+}
+@keyframes dog-walk {
+  0% {
+    background-position: -24px -24px;
+  }
+  25% {
+    background-position: -206px -24px;
+  }
+  50% {
+    background-position: -388px -24px;
+  }
+  75% {
+    background-position: -570px -24px;
+  }
+  100% {
+    background-position: -24px -24px;
+  }
+}
+@keyframes dog-jump {
+  0% {
+    background-position: -746px -6px;
+  }
+  25% {
+    width: 101px;
+    height: 96px;
+    background-position: -932px -59px;
+  }
+  100% {
+    width: 101px;
+    height: 96px;
+    background-position: -932px -59px;
+  }
+}
+.duck {
+  position: absolute;
+  bottom: 226px;
+  left: 0;
+  display: none;
+  -ms-transform: translate(0px, 0px);
+      transform: translate(0px, 0px);
+}
+.duck_fly {
+  display: block !important;
+  transition: left 1s linear;
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+}
+.duck_fly_left,
+.duck_fly_top_left,
+.duck_fly_right,
+.duck_fly_top_right {
+  display: block !important;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: steps(1, end);
+  animation-delay: 0s;
+}
+.duck_fly_left {
+  animation-name: duck-fly-left;
+  animation-delay: 0s;
+  transform: translate(50vw, -120px);
+  transition: transform 4s linear;
+}
+.duck_fly_top_left {
+  animation-name: duck-fly-top-left;
+  animation-delay: 0s;
+  transform: translate(30vw, -400px);
+  transition: transform 4s linear;
+  
+}
+.duck_fly_right {
+  animation-name: duck-fly-right;
+  animation-delay: 0s;
+  transform: translate( 70vw, -100px);
+  transition: transform 6s linear;
+}
+.duck_fly_top_right {
+  animation-name: duck-fly-top-right;
+}
+@keyframes duck-fly-left {
+  0% {
+    width: 102px;
+    height: 72px;
+    background-position: -542px -203px;
+  }
+  50% {
+    width: 104px;
+    height: 61px;
+    background-position: -956px -212px;
+  }
+  100% {
+    width: 102px;
+    height: 72px;
+    background-position: -542px -203px;
+  }
+}
+@keyframes duck-fly-top-left {
+  0% {
+    width: 74px;
+    height: 95px;
+    background-position: -116px -176px;
+  }
+  50% {
+    width: 104px;
+    height: 95px;
+    background-position: -434px -182px;
+  }
+  100% {
+    width: 74px;
+    height: 95px;
+    background-position: -116px -176px;
+  }
+}
+@keyframes duck-fly-right {
+  0% {
+    width: 102px;
+    height: 72px;
+    background-position: -680px -203px;
+  }
+  50% {
+    width: 104px;
+    height: 61px;
+    background-position: -818px -212px;
+  }
+  100% {
+    width: 102px;
+    height: 72px;
+    background-position: -680px -203px;
+  }
+}
+@keyframes duck-fly-top-right {
+  0% {
+    width: 74px;
+    height: 95px;
+    background-position: -218px -176px;
+  }
+  50% {
+    width: 104px;
+    height: 95px;
+    background-position: -323px -182px;
+  }
+  100% {
+    width: 74px;
+    height: 95px;
+    background-position: -218px -176px;
+  }
+}
